@@ -1,0 +1,15 @@
+{
+    "name": "magento/elogic",
+    "description": "N/A",
+    "type": "magento2-theme",
+    "version": "100.1.6",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}
