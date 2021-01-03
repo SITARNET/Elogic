@@ -233,7 +233,7 @@ class Cache implements ConfigOptionsListInterface
                 self::CONFIG_PATH_CACHE_BACKEND_DATABASE,
                 $this->getDefaultConfigValue(self::INPUT_KEY_CACHE_BACKEND_REDIS_DATABASE)
             );
-        
+
         $config['password'] = isset($options[self::INPUT_KEY_CACHE_BACKEND_REDIS_PASSWORD])
             ? $options[self::INPUT_KEY_CACHE_BACKEND_REDIS_PASSWORD]
             : $deploymentConfig->get(

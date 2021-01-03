@@ -395,7 +395,7 @@ angular.module('readiness-check', ['remove-dialog'])
             if ($scope.getExtensionInfo(name).hasOwnProperty('currentVersion')) {
                 return $scope.getExtensionInfo(name)['currentVersion'];
             }
-            
+
             return '';
         };
 

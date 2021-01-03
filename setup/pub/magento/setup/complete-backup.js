@@ -10,7 +10,7 @@ angular.module('complete-backup', ['ngStorage'])
         if ($localStorage.backupInfo) {
             $scope.backupInfoPassed = $localStorage.backupInfo;
         }
-        
+
         $scope.type = $state.current.type;
 
         $scope.progressCounter = BACKUPCOUNTER;
@@ -123,7 +123,7 @@ angular.module('complete-backup', ['ngStorage'])
         $scope.disableMeintenanceMode = function() {
             $http.post('index.php/maintenance/index', {'disable' : true});
         };
-        
+
         $scope.isCompleted = function() {
             return $scope.maintenance.processed
                 && $scope.check.processed

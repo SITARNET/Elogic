@@ -50,7 +50,7 @@ class CronReadinessCheck
         $success = true;
 
         $permissionInfo = $this->checkPermissionsRecursively();
-        
+
         if ($permissionInfo->containsPaths())
         {
             $error = '';

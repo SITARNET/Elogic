@@ -33,7 +33,7 @@ class PermissionInfo
 
     /**
      * Get array of non-writable paths
-     * 
+     *
      * @return \string[]
      */
     public function getNonWritablePaths() {
@@ -42,7 +42,7 @@ class PermissionInfo
 
     /**
      * Get array of non-readable paths
-     * 
+     *
      * @return \string[]
      */
     public function getNonReadablePaths() {

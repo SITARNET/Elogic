@@ -12,7 +12,7 @@ namespace Magento\Update\Queue;
 class JobRemoveBackups extends AbstractJob
 {
     const BACKUPS_FILE_NAMES = 'backups_file_names';
-    
+
     /**
      * {@inheritdoc}
      */

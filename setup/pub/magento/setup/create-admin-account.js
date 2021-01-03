@@ -98,10 +98,10 @@ angular.module('create-admin-account', ['ngStorage'])
                         isValid = typeof value === 'string' && minReg.test(value);
 
                     ctrl.$setValidity('checkPassword', isValid);
-                    
+
                     return value;
                 };
-                
+
                 ctrl.$parsers.unshift(validator);
                 ctrl.$formatters.unshift(validator);
             }

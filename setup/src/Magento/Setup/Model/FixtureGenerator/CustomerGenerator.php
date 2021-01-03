@@ -129,7 +129,7 @@ class CustomerGenerator
                 '
                     update `%s` customer
                     join (
-                        select 
+                        select
                             parent_id, min(entity_id) as min, max(entity_id) as max
                         from `%s`
                         group by parent_id
