@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
+    <!--<head>-->
         <!--<link src="my-custom-script.js"/>-->
-    </head>
+    <!--</head>-->
     <body>
-        <referenceConteiner name="content">
-            <block class="Magento\Framework\View\Element\Template" tamplate="Magento_Catalog::myCustomScript.phtml" />
-        </referenceConteiner>
+        <referenceContainer name="content">
+            <block name="my.custom.script" template="Magento_Catalog::product/view/myCustomScript.phtml" after="-" />
+        </referenceContainer>
     </body>
 </page>
