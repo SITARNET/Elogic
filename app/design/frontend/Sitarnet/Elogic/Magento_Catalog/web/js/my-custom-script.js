@@ -11,7 +11,7 @@ define ([
     //         return this;
     //     }
     // });
-    //
+
     // return $.mage.myCustomScript;
 
     // return function () {

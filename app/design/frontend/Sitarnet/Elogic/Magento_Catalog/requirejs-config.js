@@ -4,9 +4,14 @@ var config = {
             myCustomScript: 'Magento_Catalog/js/my-custom-script'
         }
     },
-    mixins: {
-        'Magento_Swatches/js/swatch-renderer': {
-            'Magento_Catalog/js/swatch-renderer-mixin': true
+    config: {
+        mixins: {
+            'Magento_Swatches/js/swatch-renderer': {
+                'Magento_Catalog/js/swatch-renderer-mixin': false
+            },
+            'Magento_Catalog/js/catalog-add-to-cart': {
+                'Magento_Catalog/js/catalog-add-to-cart-mixin': true
+            }
         }
     }
 };

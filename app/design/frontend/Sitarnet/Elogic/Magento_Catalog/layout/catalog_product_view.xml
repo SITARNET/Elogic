@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
-
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <!--<head>-->
-        <!--<link src="my-custom-script.js"/>-->
-    <!--</head>-->
     <body>
-        <referenceContainer name="content">
+        <referenceContainer name="main.content">
             <block name="my.custom.script" template="Magento_Catalog::product/view/myCustomScript.phtml" after="-" />
         </referenceContainer>
     </body>
