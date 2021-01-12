@@ -1,7 +1,8 @@
 var config = {
     map: {
         '*': {
-            myCustomScript: 'Magento_Catalog/js/my-custom-script'
+            myCustomScript: 'Magento_Catalog/js/my-custom-script',
+            searchScript: 'Magento_Catalog/js/search'
         }
     },
     config: {
@@ -11,9 +12,6 @@ var config = {
             },
             'Magento_Catalog/js/catalog-add-to-cart': {
                 'Magento_Catalog/js/catalog-add-to-cart-mixin': true
-            },
-            'Magento_Search/js/form-mini': {
-                'Magento_Catalog/js/form-mini-mixin' : true
             }
         }
     }

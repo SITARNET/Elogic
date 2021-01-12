@@ -1,28 +1,18 @@
-<form class="" id="new_search_form" action="/catalogsearch/result/" method="get">
-    <div class="field search">
-        <div class="control">
-            <input id="new-search"
-                   data-mage-init='{"quickSearch":{
-                     "formSelector":"#new_search_form",
-                     "minSearchLength": 2,
-                     "url":"/search/ajax/suggest",
-                     "destinationSelector":"#search_results",
-                     "autocomplete": "on"}
-                    }'
-                   type="text"
-                   name="q"
-                   placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
-                   class="input-text"/>
-            <div id="search_results" class="search-autocomplete"></div>
-        </div>
-    </div>
-    <div class="actions">
-        <button type="submit"
-                title="<?= $block->escapeHtml(__('Search')) ?>"
-                class="action search"
-                aria-label="Search">
-            <span><?= $block->escapeHtml(__('Search')) ?></span>
-        </button>
-    </div>
-</form>
+<div id="search" class="search">
+      <input type="text"
+             name="filter"
+             id="filter"
+             placeholder="Enter Your Search..."
+      />
+</div>
+
+
+<script type="text/x-magento-init">
+     {
+         "#search": {
+             "searchScript": {}
+         }
+     }
+</script>
+
 
