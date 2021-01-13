@@ -399,7 +399,7 @@ class PhpReadinessCheckTest extends \PHPUnit\Framework\TestCase
         ];
         $this->assertEquals($expected, $this->phpReadinessCheck->checkPhpExtensions());
     }
-
+    
     /**
      * @return bool
      */
