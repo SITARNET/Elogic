@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+use Elogic\FavoriteProducts\Api\FavoriteProductsViewInterface;
+use Elogic\FavoriteProducts\Block\FavoriteProducts;
+
+/**
+ * @var FavoriteProducts $block
+ * @var FavoriteProductsViewInterface $favoriteView
+ */
+$favoriteView = $block->getData('favorite_products');
+$skus = $favoriteView ? $favoriteView->getSkus() : [];
+?>
+<div class="block block-favorite-products">
+    <div class="block-title">
+        <strong role="heading" aria-level="2"><?= __('Favorite Products') ?></strong>
+    </div>
+    <div class="block-content">
+        <?php if ($skus): ?>
+            <strong class="subtitle"><?= __('SKUs') ?></strong>
+            <ul class="skus-list">
+                <?php foreach ($skus as $sku): ?>
+                    <li class="sku" data-sku="<?= $block->escapeHtml($sku) ?>"><?= $block->escapeHtml($sku) ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <strong class="subtitle"><?= __('You Have No Favorite Products :(') ?></strong>
+            <ul class="skus-list empty"></ul>
+        <?php endif; ?>
+    </div>
+</div>
+

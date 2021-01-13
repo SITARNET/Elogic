@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+use Elogic\FavoriteProducts\Api\FavoriteProductsViewInterface;
+use Elogic\FavoriteProducts\Block\FavoriteProducts;
+
+/**
+ * @var FavoriteProducts $block
+ * @var FavoriteProductsViewInterface $favoriteView
+ */
+$favoriteView = $block->getData('favorite_products');
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "elogicFavorites": {
+                "addUrl": "<?= $block->getUrl('favorite/products/add') ?>",
+                "removeUrl": "<?= $block->getUrl('favorite/products/remove') ?>",
+                "addButtonSelector": ".favorites button"
+            },
+            "elogicFavoritesState": {
+                "skus": <?= $favoriteView ? $favoriteView->getSkusInJson() : '' ?>,
+                "skusListSelector": ".block-favorite-products .skus-list"
+            }
+        }
+    }
+</script>
+

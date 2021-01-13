@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Elogic\FavoriteProducts\Block\FavoriteProducts"
+                   name="elogic.favorite.products.init.js"
+                   template="Elogic_FavoriteProducts::list/favorite-products-init-js.phtml">
+                <arguments>
+                    <argument name="favorite_products" xsi:type="object" shared="true">Elogic\FavoriteProducts\Api\FavoriteProductsViewInterface</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="category.product.addto">
+            <block class="Elogic\FavoriteProducts\Block\AddToFavorites"
+                   name="elogic.favorite.products.add"
+                   template="Elogic_FavoriteProducts::list/add-to-favorite-products.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Elogic\FavoriteProducts\Block\FavoriteProducts"
+                   name="elogic.favorite.products"
+                   template="Elogic_FavoriteProducts::favorite-products.phtml">
+                <arguments>
+                    <argument name="favorite_products" xsi:type="object" shared="true">Elogic\FavoriteProducts\Api\FavoriteProductsViewInterface</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
