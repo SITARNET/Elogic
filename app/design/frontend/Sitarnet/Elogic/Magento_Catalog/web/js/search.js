@@ -26,6 +26,13 @@ define([
                 } else { // в другом случаии
                     console.log('String has less than tree symbols: ' + value.length); // .length - представляет длину строки
                 }
+                if (value.length <= 2) { // условие: если длина строки меньше или равно 2
+                    console.log('String has: ' + value.length);
+                    $('.products.list.items li').filter(function () {
+                        let result = $(this).find('a.product-item-link').text().toLowerCase().indexOf(value) > -1;
+                        $(this).toggle(result); // отображаем все выбранные элементы
+                    });
+                }
             });
         }
     });
