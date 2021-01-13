@@ -102,10 +102,10 @@ class ThisIsMyTest {
     {
         \This\Is\Another\Ns::class;
     }
-
+    
     public function test()
     {
-
+        
     }
 }
 PHP
@@ -136,10 +136,10 @@ class ThisIsMyTest {
         \$this->get(\This\Is\Another\Ns::class)->method();
         self:: class;
     }
-
+    
     public function test()
     {
-
+        
     }
 }
 
@@ -171,15 +171,15 @@ namespace This\Is\My\Ns {
 
     class ThisIsMyTest
     {
-
+    
         public function __construct()
         {
             \This\Is\Another\Ns::class;
             self:: class;
         }
-
+    
     }
-
+    
     class ThisIsForBreaking
     {
     }
@@ -189,7 +189,7 @@ namespace This\Is\Not\My\Ns {
 
     class ThisIsNotMyTest
     {
-    }
+    }   
 }
 
 PHP
@@ -251,7 +251,7 @@ PHP
             <<<PHP
             <?php
 
-namespace This\Is\My\Ns
+namespace This\Is\My\Ns 
 
 class ThisIsMyTest
 {

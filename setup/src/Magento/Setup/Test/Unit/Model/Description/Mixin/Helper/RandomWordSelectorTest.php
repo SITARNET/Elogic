@@ -42,7 +42,7 @@ class RandomWordSelectorTest extends \PHPUnit\Framework\TestCase
         return [
             [
                 'source' => '
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 ',
                 'count' => 1
@@ -53,7 +53,7 @@ class RandomWordSelectorTest extends \PHPUnit\Framework\TestCase
             ],
             [
                 'source' => '
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 ',
                 'count' => 3
