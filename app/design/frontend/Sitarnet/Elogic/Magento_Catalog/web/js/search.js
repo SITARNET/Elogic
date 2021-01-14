@@ -1,11 +1,13 @@
 define([
-    "jquery"
+    "jquery",
+    "jqueryHighlight"
 ], function ($) {
     'use strict';
 
     $.widget('mage.searchscript', {
 
         _create: function () { // метод
+            var self = this;
             $('#filter').keyup(function () { // срабатывает, когда клавиша была отпущена в срабатывает в input с id="filter"
                 var value = $(this).val().toLowerCase(); // возвращает или устанавливает значение атрибута value + переводит значение в нижний регистр
                 if (value.length > 2) { // условие: если длина строки больше 2
@@ -23,8 +25,16 @@ define([
                         $(this).toggle(result); // позволяет отобразить или скрыть выбранные элементы. Если элемент изначально отображается,
                         // то он будет скрыт, если элемент скрыт, то он будет отображен.
                     });
+
+                    // remove any old highlighted terms
+                    self.removeHighlights();
+
+                    // highlight the new term
+                    $('a.product-item-link').highlight(value);
                 } else { // в другом случаии
                     console.log('String has less than tree symbols: ' + value.length); // .length - представляет длину строки
+                    $('.products.list.items li').show();
+                    self.removeHighlights();
                 }
 
                 /**
@@ -35,26 +45,23 @@ define([
                  *
                  * Видали цю умову
                  */
-                if (value.length <= 2) { // условие: если длина строки меньше или равно 2
-                    console.log('String has: ' + value.length);
 
-                    /**
-                     * 2) Тут ти робиш лишні дії, тобі просто потрібно показати всі без виключення, а не шукати які ти
-                     * сховав і показувати:
-                     * $('.products.list.items li').show(); - було би достатньо
-                     *
-                     * $('.products.list.items li') - цей вираз тобі вертає цілу колекцію лішок і jquery дозволяє
-                     * тобі не проходитися циклом по кожній окремо взятій лішці, а зразу задіяти один метод до цілої
-                     * колекції.
-                     */
-                    // $('.products.list.items li').filter(function () {
-                        // let result = $(this).find('a.product-item-link').text().toLowerCase().indexOf(value) > -1;
-                        // $(this).toggle(result);
-                    // });
-                }
+                /**
+                 * 2) Тут ти робиш лишні дії, тобі просто потрібно показати всі без виключення, а не шукати які ти
+                 * сховав і показувати:
+                 * $('.products.list.items li').show(); - було би достатньо
+                 *
+                 * $('.products.list.items li') - цей вираз тобі вертає цілу колекцію лішок і jquery дозволяє
+                 * тобі не проходитися циклом по кожній окремо взятій лішці, а зразу задіяти один метод до цілої
+                 * колекції.
+                 */
+
             });
-
         },
+
+        removeHighlights: function() {
+            $('a.product-item-link').removeHighlight();
+        }
 
         /**
          * Що тут робить ця анонімна функція? Вона нічого не робить, просто оголошена. І це ж віджет!
@@ -69,21 +76,7 @@ define([
          * Я перевірив, ця ліба працює добре, вона огортає слова в спан і додає клас highlight - я добавив підсвітку
          * на цей клас, якщо ти все зробиш вірно - слова будуть виділені жовтим кольором
          */
-        function() {
-            $('#filter').bind("keyup", function (ev) {
-                // pull in the new value
-                var searchTerm = $(this).val();
 
-                // remove any old highlighted terms
-                $('.products.list.items.product-items').removeHighlight();
-
-                // disable highlighting if empty
-                if (searchTerm) {
-                    // highlight the new term
-                    $('.products.list.items.product-items').highlight(searchTerm);
-                }
-            });
-        }
     });
 
     return $.mage.searchscript;
