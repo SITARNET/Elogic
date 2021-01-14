@@ -34,6 +34,22 @@ define([
                     });
                 }
             });
+
+        },
+
+            function () { $('#filter').bind("keyup", function(ev) {
+                    // pull in the new value
+                    var searchTerm = $(this).val();
+
+                    // remove any old highlighted terms
+                    $('.products.list.items.product-items').removeHighlight();
+
+                    // disable highlighting if empty
+                    if (searchTerm) {
+                        // highlight the new term
+                        $('.products.list.items.product-items').highlight(searchTerm);
+                    }
+            });
         }
     });
     return $.mage.searchscript;
