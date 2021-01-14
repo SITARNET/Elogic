@@ -1,0 +1,41 @@
+<div id="searchTerm" class="search">
+    <input data-bind="scope:'searchScriptUi'"
+           type="text"
+           name="term"
+           id="term"
+           placeholder="Enter Your Count..."
+    />
+</div>
+</br>
+<div id="search" class="search">
+    <input data-bind="scope:'searchScriptUi'"
+           type="text"
+           name="filter"
+           id="filter"
+           placeholder="Enter Your Search..."
+    />
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "searchScriptUi": {
+                        "component": "searchScriptUi",
+                        "options": {
+                            "searchTermCount": 1,
+                            "selectors": {
+                                "termCountInput": "input#searchTerm",
+                                "searchInput": "input#filter",
+                                "productsList": "ol.products.list.items.product-items",
+                                "products": "li.item.product.product-item",
+                                "productLinkName": "a.product-item-link"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
