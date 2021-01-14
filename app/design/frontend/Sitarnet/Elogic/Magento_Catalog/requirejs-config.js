@@ -2,7 +2,8 @@ var config = {
     map: {
         '*': {
             myCustomScript: 'Magento_Catalog/js/my-custom-script',
-            searchScript: 'Magento_Catalog/js/search'
+            searchScript: 'Magento_Catalog/js/search',
+            jqueryHighlight: 'Magento_Catalog/js/jquery-highlight'
         }
     },
     config: {
