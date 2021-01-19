@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+
+/**
+ * @var Template $block
+ */
+?>
+<div data-bind="scope: 'favorite-products'" class="block block-favorite-products">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "favorite-products": {
+                        "component": "Elogic_FavoriteProducts/js/ui/favorite-products",
+                            "updateUrl": "<?= $block->getUrl('rest/V1/favorite-products/') ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>

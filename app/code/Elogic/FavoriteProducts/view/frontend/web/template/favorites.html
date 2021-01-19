@@ -1,0 +1,18 @@
+
+<div class="block-title">
+    <strong role="heading" aria-level="2" data-bind="i18n: 'Favorite Products'"></strong>
+</div>
+<div class="block-content" data-bind="attr: { 'data-length': Object.keys(favoriteSkus()).length }">
+    <!-- ko if: (Object.keys(favoriteSkus()).length) -->
+        <strong class="subtitle" data-bind="i18n: 'SKUs'"></strong>
+        <ul class="skus-list">
+            <each args="data: Object.keys(favoriteSkus()), as: '$key'">
+                <li class="sku" data-bind="text: $parent.favoriteSkus()[$key], attr: { 'data-sku': $parent.favoriteSkus()[$key] }"></li>
+            </each>
+        </ul>
+    <!--/ko-->
+    <!-- ko ifnot: (Object.keys(favoriteSkus()).length) -->
+        <strong class="subtitle" data-bind="i18n: 'You Have No Favorite Products :('"></strong>
+        <ul class="skus-list empty"></ul>
+    <!-- /ko -->
+</div>

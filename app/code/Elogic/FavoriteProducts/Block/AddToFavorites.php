@@ -2,12 +2,12 @@
 
 namespace Elogic\FavoriteProducts\Block;
 
-use Magento\Framework\View\Element\Template;
+use Magento\Catalog\Block\Product\ProductList\Item\Block;
 
 /**
  * Class AddToFavorites
  */
-class AddToFavorites extends Template
+class AddToFavorites extends Block
 {
 
 }

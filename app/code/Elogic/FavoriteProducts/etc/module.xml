@@ -4,6 +4,7 @@
         <sequence>
             <module name="Magento_PageCache"/>
             <module name="Magento_Catalog"/>
+            <module name="Magento_Customer"/>
         </sequence>
     </module>
 </config>

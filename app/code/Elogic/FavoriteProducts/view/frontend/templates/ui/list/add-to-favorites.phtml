@@ -1,0 +1,34 @@
+<?php
+
+declare(strict_types=1);
+
+use Elogic\FavoriteProducts\Block\AddToFavorites;
+
+/**
+ * @var AddToFavorites $block
+ */
+$product = $block->getProduct();
+$productSku = $product ? $product->getSku() : '';
+?>
+<div data-bind="scope: 'add-to-favorites'" class="favorites">
+    <button name="add_favorite" type="button"
+            data-bind="i18n: isFavorite('<?= $productSku; ?>') ? 'Added! Remove From Favorites' : 'Add To Favorites',
+                       click: select('<?= $productSku; ?>'),
+                       css: {'selected': isFavorite('<?= $productSku; ?>')}"></button>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "add-to-favorites": {
+                        "component": "Elogic_FavoriteProducts/js/ui/favorite-products",
+                            "updateUrl": "<?= $block->getUrl('rest/V1/favorite-products/') ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
