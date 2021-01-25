@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="product.sku.search"
+                   template="Elogic_ProductBySku::product-sku-search.phtml">
+                <arguments>
+                    <argument name="skuParameter" xsi:type="object" shared="true">Elogic\ProductBySku\ViewModel\SkuParameter</argument>
+                </arguments>
+            </block>
+            <block class="Elogic\ProductBySku\Block\ProductInfoBlock" name="product.sku.info"
+                   template="Elogic_ProductBySku::product-sku-info.phtml" after="product.sku.search">
+                <arguments>
+                    <argument name="skuParameter" xsi:type="object" shared="true">Elogic\ProductBySku\ViewModel\SkuParameter</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

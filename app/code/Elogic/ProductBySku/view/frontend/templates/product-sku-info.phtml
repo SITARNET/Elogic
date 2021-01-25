@@ -1,0 +1,37 @@
+<?php
+
+use Elogic\ProductBySku\ViewModel\SkuParameter;
+use Magento\Framework\View\Element\Template;
+
+/**
+ * @var Template $block
+ * @var SkuParameter $viewModel
+ */
+$viewModel = $block->getData('skuParameter');
+$sku = $viewModel ? $viewModel->getSkuFromRequest() : '';
+$product = $viewModel ? $viewModel->getProduct() : false;
+?>
+
+<?php if ($product): ?>
+    <h1 class="product-info-label"><?= __('Found Product information:') ?></h1>
+    <div class="product-info">
+        <div class="field sku">
+            <span class="label"><?= __('SKU: ') ?></span>
+            <span class="value"><?= $sku ?></span>
+        </div>
+        <div class="field name">
+            <span class="label"><?= __('Name: ') ?></span>
+            <span class="value"><?= $product->getName() ?></span>
+        </div>
+        <div class="field name">
+            <span class="label"><?= __('Price: ') ?></span>
+            <span class="value"><?= $product->getPrice() ?></span>
+        </div>
+        <div class="field type">
+            <span class="label"><?= __('Type: ') ?></span>
+            <span class="value"><?= $product->getTypeId() ?></span>
+        </div>
+    </div>
+<?php else: ?>
+    <h1 class="product-info-label" style="color: red"><?= __('No product has been found by this sku: "%1"', $sku) ?></h1>
+<?php endif; ?>

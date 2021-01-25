@@ -31,7 +31,8 @@
         "magento/module-widget-sample-data": "100.3.*",
         "magento/module-wishlist-sample-data": "100.3.*",
         "magento/product-community-edition": "2.3.4",
-        "magento/sample-data-media": "100.3.*"
+        "magento/sample-data-media": "100.3.*",
+        "msp/devtools": "^1.2"
     },
     "require-dev": {
         "allure-framework/allure-phpunit": "~1.2.0",

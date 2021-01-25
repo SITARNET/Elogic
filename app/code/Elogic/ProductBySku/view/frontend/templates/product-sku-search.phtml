@@ -1,0 +1,22 @@
+<?php
+
+use Elogic\ProductBySku\ViewModel\SkuParameter;
+use Magento\Framework\View\Element\Template;
+
+/**
+ * @var Template $block
+ * @var SkuParameter $viewModel
+ */
+$viewModel = $block->getData('skuParameter');
+$sku = $viewModel ? $viewModel->getSkuFromRequest() : '';
+?>
+
+<form id="search-by-sku" method="POST" action="<?= $block->getUrl('show/product/find') ?>">
+    <div class="field">
+        <label for="search-sku-input"><?= __('Enter SKU:') ?></label>
+        <input id="search-sku-input" type="text" name="sku" value="<?= $sku ?>">
+    </div>
+    <div class="actions-toolbar">
+        <input type="submit" class="action primary" name="submit_sku" value="<?= __('Submit') ?>">
+    </div>
+</form>
