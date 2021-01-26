@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.top">
+            <block class="Elogic\TheMatrix\Block\Choice" name="pill.choice" template="Elogic_TheMatrix::pill-choice.phtml" before="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Elogic\TheMatrix\ViewModel\ChoiceView</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

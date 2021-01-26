@@ -1,0 +1,43 @@
+<?php
+
+use Elogic\TheMatrix\Block\Choice;
+use Elogic\TheMatrix\ViewModel\ChoiceView;
+
+/**
+ * @var Choice $block
+ * @var ChoiceView $viewModel
+ */
+$viewModel = $block->getViewModel();
+?>
+<?php if ($viewModel): ?>
+    <div class="matrix-offer">
+        <?php if ($choice = $viewModel->getChoice()): ?>
+            <?php if ($choice === $viewModel->getRedPillState()): ?>
+                <div class="pill-state red">
+                    <h2 class="text"><?= __("Nice, I show you how deep the rabbit hole goes.") ?></h2>
+                </div>
+            <?php endif; ?>
+            <?php if ($choice === $viewModel->getBluePillState()): ?>
+                <div class="pill-state blue">
+                    <h2 class="text"><?= __("Stay at home and believe whatever you want to believe.") ?></h2>
+                </div>
+            <?php endif; ?>
+        <?php else: ?>
+            <div class="pill-state none">
+                <h2 class="text"><?= __("All I'm offering is the truth, nothing more.") ?></h2>
+            </div>
+        <?php endif; ?>
+        <form class="pill-choice-form red-pill" method="POST" action="<?= $block->getUrl('matrix/choose') ?>">
+            <div class="actions-toolbar">
+                <input type="hidden" name="<?= $viewModel->getChoiceKey() ?>" value="<?= $viewModel->getRedPillState() ?>">
+                <input type="submit" class="action red primary" name="submit" value="<?= __('Red') ?>">
+            </div>
+        </form>
+        <form class="pill-choice-form blue-pill" method="POST" action="<?= $block->getUrl('matrix/choose') ?>">
+            <div class="actions-toolbar">
+                <input type="hidden" name="<?= $viewModel->getChoiceKey() ?>" value="<?= $viewModel->getBluePillState() ?>">
+                <input type="submit" class="action blue primary" name="submit" value="<?= __('Blue') ?>">
+            </div>
+        </form>
+    </div>
+<?php endif; ?>

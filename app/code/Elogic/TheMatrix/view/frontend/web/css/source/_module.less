@@ -1,0 +1,53 @@
+
+.matrix-offer {
+    padding: 20px;
+
+    .pill-state {
+        &.none {
+            color: limegreen;
+        }
+
+        &.red {
+            color: red;
+        }
+
+        &.blue {
+            color: blue;
+        }
+    }
+
+    .pill-choice-form {
+        display: inline-flex;
+        min-width: 200px;
+
+        &.red-pill {
+            margin-right: 20px;
+        }
+
+        .actions-toolbar, .action.primary {
+            width: 100%;
+        }
+
+        .action {
+            border-radius: 20px;
+
+            &.red {
+                background-color: red;
+
+                &:hover {
+                    background-color: #ff5501;
+                    box-shadow: -10px 0 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+                }
+            }
+
+            &.blue {
+                background-color: blue;
+
+                &:hover {
+                    background-color: #6f6ff4;
+                    box-shadow: -10px 0 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+                }
+            }
+        }
+    }
+}

@@ -256,6 +256,7 @@ return [
         'Dotdigitalgroup_Chat' => 1,
         'Elogic_FavoriteProducts' => 1,
         'Elogic_ProductBySku' => 1,
+        'Elogic_TheMatrix' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
